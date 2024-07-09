@@ -13,7 +13,7 @@ namespace Celikoor_Kelompok19
 {
     public partial class FormDaftarAktors : Form
     {
-        public List<Aktor> listAktor = new List<Aktor>();
+        public List<User> listAktor = new List<User>();
 
         public FormDaftarAktors()
         {
@@ -22,7 +22,7 @@ namespace Celikoor_Kelompok19
 
         public void FormDaftarAktors_Load(object sender, EventArgs e)
         {
-            listAktor = Aktor.BacaData("", "");
+            listAktor = User.BacaData("", "");
 
             if (listAktor.Count > 0)
             {
@@ -60,19 +60,19 @@ namespace Celikoor_Kelompok19
             switch (cmbKriteria.Text)
             {
                 case "ID":
-                    listAktor = Aktor.BacaData("id", txtNilaiKriteria.Text);
+                    listAktor = User.BacaData("id", txtNilaiKriteria.Text);
                     break;
                 case "Nama":
-                    listAktor = Aktor.BacaData("nama", txtNilaiKriteria.Text);
+                    listAktor = User.BacaData("nama", txtNilaiKriteria.Text);
                     break;
                 case "Tanggal Lahir":
-                    listAktor = Aktor.BacaData("tgl_lahir", txtNilaiKriteria.Text);
+                    listAktor = User.BacaData("tgl_lahir", txtNilaiKriteria.Text);
                     break;
                 case "Gender":
-                    listAktor = Aktor.BacaData("gender", txtNilaiKriteria.Text);
+                    listAktor = User.BacaData("gender", txtNilaiKriteria.Text);
                     break;
                 case "Negara Asal":
-                    listAktor = Aktor.BacaData("negara_asal", txtNilaiKriteria.Text);
+                    listAktor = User.BacaData("negara_asal", txtNilaiKriteria.Text);
                     break;
             }
 
@@ -113,7 +113,7 @@ namespace Celikoor_Kelompok19
             {
                 string pID = dataGridViewDaftarAktor.CurrentRow.Cells["ID"].Value.ToString();
 
-                Aktor a = Aktor.AmbilData("id", pID);
+                User a = User.AmbilData("id", pID);
                 if (a != null)
                 {
                     FormUpdateAktor frm = new FormUpdateAktor();
@@ -138,8 +138,8 @@ namespace Celikoor_Kelompok19
                 DialogResult hasil = MessageBox.Show(this, "Apakah anda yakin ingin menghapus " + idHapus + "-" + namaHapus + "?", "HAPUS", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (hasil == DialogResult.Yes)
                 {
-                    Aktor c = new Aktor(idHapus, namaHapus);
-                    Boolean hapus = Aktor.HapusData(c);
+                    User c = new User(idHapus, namaHapus);
+                    Boolean hapus = User.HapusData(c);
                     if (hapus == true)
                     {
                         MessageBox.Show("Penghapusan data berhasil");

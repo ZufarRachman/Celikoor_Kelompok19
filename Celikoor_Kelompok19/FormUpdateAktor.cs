@@ -38,8 +38,8 @@ namespace Celikoor_Kelompok19
         {
             try
             {
-                Aktor a = new Aktor(textBoxID.Text, textBoxNama.Text, dateTimePickerTglLahir.Value,comboBoxGender.Text,textBoxNegaraAsal.Text);
-                Aktor.UbahData(a);
+                User a = new User(textBoxID.Text, textBoxNama.Text, dateTimePickerTglLahir.Value,comboBoxGender.Text,textBoxNegaraAsal.Text);
+                User.UbahData(a);
                 MessageBox.Show("Data berhasil diubah.", "Info");
                 buttonKeluar_Click(this, e);
             }

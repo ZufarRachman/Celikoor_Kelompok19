@@ -22,7 +22,7 @@ namespace Celikoor_Kelompok19
         {
             try
             {
-                textBoxID.Text = Aktor.GenerateID();
+                textBoxID.Text = User.GenerateID();
                 textBoxID.Enabled = false;
 
                 textBoxNama.Focus();
@@ -42,8 +42,8 @@ namespace Celikoor_Kelompok19
         {
             try
             {
-                Aktor a = new Aktor(textBoxID.Text, textBoxNama.Text, dateTimePickerTglLahir.Value, comboBoxGender.Text, textBoxNegaraAsal.Text);
-                Aktor.TambahData(a);
+                User a = new User(textBoxID.Text, textBoxNama.Text, dateTimePickerTglLahir.Value, comboBoxGender.Text, textBoxNegaraAsal.Text);
+                User.TambahData(a);
                 MessageBox.Show("Data berhasil ditambahkan.", "Info");
                 buttonKosongi_Click(this, e);
                 FormTambahAktors_Load(this, e);

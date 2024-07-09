@@ -76,8 +76,8 @@ namespace Celikoor_Kelompok19
 
                 Cinema cinemaDipilih = (Cinema)comboBoxCinema.SelectedItem;
 
-                Studio k = new Studio(textBoxID.Text, textBoxNama.Text, int.Parse(textBoxKapasitas.Text), int.Parse(textBoxHargaWeekday.Text), int.Parse(textBoxHargaWeekend.Text), jenisStudioDipilih, cinemaDipilih);
-                Studio.UbahData(k);
+                Picture k = new Picture(textBoxID.Text, textBoxNama.Text, int.Parse(textBoxKapasitas.Text), int.Parse(textBoxHargaWeekday.Text), int.Parse(textBoxHargaWeekend.Text), jenisStudioDipilih, cinemaDipilih);
+                Picture.UbahData(k);
                 MessageBox.Show("Data berhasil diubah.", "Info");
                 buttonKeluar_Click(this, e);
             }

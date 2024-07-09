@@ -14,7 +14,7 @@ namespace Celikoor_Kelompok19
     
     public partial class FormDaftarStudio : Form
     {
-        public List<Studio> listStudio = new List<Studio>();
+        public List<Picture> listStudio = new List<Picture>();
         public FormDaftarStudio()
         {
             InitializeComponent();
@@ -24,7 +24,7 @@ namespace Celikoor_Kelompok19
         {
             FormatDataGrid();
 
-            listStudio = Studio.BacaData("", "");
+            listStudio = Picture.BacaData("", "");
 
             TampilDataGrid();
             if (listStudio.Count > 0)
@@ -59,7 +59,7 @@ namespace Celikoor_Kelompok19
             {
                 string pID = dataGridViewDaftarStudio.CurrentRow.Cells["ID"].Value.ToString();
 
-                Studio s = Studio.AmbilDataByID("s.id", pID);
+                Picture s = Picture.AmbilDataByID("s.id", pID);
                 if (s != null)
                 {
                     FormUpdateStudio frm = new FormUpdateStudio();
@@ -88,8 +88,8 @@ namespace Celikoor_Kelompok19
                 DialogResult hasil = MessageBox.Show(this, "Apakah anda yakin ingin menghapus " + idHapus + "-" + namaHapus + "?", "HAPUS", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (hasil == DialogResult.Yes)
                 {
-                    Studio k = new Studio(idHapus, namaHapus);
-                    Boolean hapus = Studio.HapusData(k);
+                    Picture k = new Picture(idHapus, namaHapus);
+                    Boolean hapus = Picture.HapusData(k);
                     if (hapus == true)
                     {
                         MessageBox.Show("Penghapusan data berhasil");
@@ -109,25 +109,25 @@ namespace Celikoor_Kelompok19
             switch (cmbKriteria.Text)
             {
                 case "ID":
-                    listStudio = Studio.BacaData("s.id", txtNilaiKriteria.Text);
+                    listStudio = Picture.BacaData("s.id", txtNilaiKriteria.Text);
                     break;
                 case "Nama":
-                    listStudio = Studio.BacaData("s.nama", txtNilaiKriteria.Text);
+                    listStudio = Picture.BacaData("s.nama", txtNilaiKriteria.Text);
                     break;
                 case "Kapasitas":
-                    listStudio = Studio.BacaData("s.Kapasitas", txtNilaiKriteria.Text);
+                    listStudio = Picture.BacaData("s.Kapasitas", txtNilaiKriteria.Text);
                     break;
                 case "Harga Weekday":
-                    listStudio = Studio.BacaData("s.harga_weekday", txtNilaiKriteria.Text);
+                    listStudio = Picture.BacaData("s.harga_weekday", txtNilaiKriteria.Text);
                     break;
                 case "Harga Weekend":
-                    listStudio = Studio.BacaData("s.harga_weekend", txtNilaiKriteria.Text);
+                    listStudio = Picture.BacaData("s.harga_weekend", txtNilaiKriteria.Text);
                     break;
                 case "Jenis Studio":
-                    listStudio = Studio.BacaData("js.nama", txtNilaiKriteria.Text);
+                    listStudio = Picture.BacaData("js.nama", txtNilaiKriteria.Text);
                     break;
                 case "Cinema":
-                    listStudio = Studio.BacaData("c.nama_cabang", txtNilaiKriteria.Text);
+                    listStudio = Picture.BacaData("c.nama_cabang", txtNilaiKriteria.Text);
                     break;
             }
 
@@ -194,7 +194,7 @@ namespace Celikoor_Kelompok19
 
             if(listStudio.Count > 0)
             {
-                foreach(Studio s in listStudio)
+                foreach(Picture s in listStudio)
                 {
                     dataGridViewDaftarStudio.Rows.Add(s.Id, s.Nama, s.Kapasitas, s.JenisStudio.Nama, s.Cinema.NamaCabang, s.Harga_weekday, s.Harga_weekend);
                 }

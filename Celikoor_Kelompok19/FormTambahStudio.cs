@@ -28,8 +28,8 @@ namespace Celikoor_Kelompok19
 
                 Cinema cinemaDipilih = (Cinema) comboBoxCinema.SelectedItem;
 
-                Studio k = new Studio(textBoxID.Text, textBoxNama.Text, int.Parse(textBoxKapasitas.Text), int.Parse(textBoxHargaWeekday.Text), int.Parse(textBoxHargaWeekend.Text), jenisStudioDipilih, cinemaDipilih);
-                Studio.TambahData(k);
+                Picture k = new Picture(textBoxID.Text, textBoxNama.Text, int.Parse(textBoxKapasitas.Text), int.Parse(textBoxHargaWeekday.Text), int.Parse(textBoxHargaWeekend.Text), jenisStudioDipilih, cinemaDipilih);
+                Picture.TambahData(k);
                 MessageBox.Show("Data berhasil ditambahkan.", "Info");
                 buttonKosongi_Click(this, e);
                 FormTambahStudio_Load(this, e);
@@ -54,7 +54,7 @@ namespace Celikoor_Kelompok19
             comboBoxCinema.DropDownStyle = ComboBoxStyle.DropDownList;
             try
             {
-                textBoxID.Text = Studio.GenerateID();
+                textBoxID.Text = Picture.GenerateID();
                 textBoxID.Enabled = false;
 
                 textBoxNama.Focus();

@@ -15,7 +15,7 @@ namespace Celikoor_Kelompok19
     {
         public List<Film> listFilm = new List<Film>();
         public List<Cinema> listCinema = new List<Cinema>();
-        public List<Studio> listStudio = new List<Studio>();
+        public List<Picture> listStudio = new List<Picture>();
         public List<AktorFilm> listAktorFilm = new List<AktorFilm>();
         public List<GenreFilm> listGenreFilm = new List<GenreFilm>();
         public List<SesiFilm> listSesiFilm = new List<SesiFilm>();
@@ -64,7 +64,7 @@ namespace Celikoor_Kelompok19
             List<string> checkedBoxes = new List<string>();
             
             Film f = (Film)comboBoxJudul.SelectedItem;
-            Studio s = (Studio)comboBoxStudio.SelectedItem;
+            Picture s = (Picture)comboBoxStudio.SelectedItem;
             
             //mengecek apakah ada checkBox yang dicentang
             if(checkBoxI.Checked || checkBoxII.Checked || checkBoxIII.Checked || checkBoxIV.Checked)
@@ -150,7 +150,7 @@ namespace Celikoor_Kelompok19
                     JadwalFilm jf = new JadwalFilm(DateTime.Parse(tanggal), jamPemutaran);
                     Film f = Film.AmbilDataByID("f.judul", judul);
                     Cinema c = Cinema.AmbilData("nama_cabang", cinema);
-                    Studio s = Studio.AmbilDataForJadwalFilm("s.nama", studio, c);
+                    Picture s = Picture.AmbilDataForJadwalFilm("s.nama", studio, c);
                     Boolean hapusJadwalFilm = JadwalFilm.HapusData(jf, s, f);
                     if (hapusJadwalFilm == true)
                     {
@@ -216,7 +216,7 @@ namespace Celikoor_Kelompok19
             //method ini berjalan tiap kali nilai yang kita pilih di comboBoxCinema berubah
             Cinema c = Cinema.AmbilData("nama_cabang", comboBoxCinema.Text);
 
-            listStudio = Studio.BacaData("s.cinemas_id",c.Id);
+            listStudio = Picture.BacaData("s.cinemas_id",c.Id);
 
             comboBoxStudio.DataSource = listStudio;
             comboBoxStudio.ValueMember = "Id";
@@ -231,7 +231,7 @@ namespace Celikoor_Kelompok19
             //setiap kali kita mengganti comboBoxCinema
             if (comboBoxStudio.SelectedItem != null)
             {
-                Studio s = (Studio)comboBoxStudio.SelectedItem;
+                Picture s = (Picture)comboBoxStudio.SelectedItem;
                 lblJenisStudio.Text = s.JenisStudio.Nama.ToString();
                 lblJumlahKursi.Text = s.Kapasitas.ToString() + " Kursi";
                 lblHargaWeekday.Text = "Rp " + s.Harga_weekday.ToString();

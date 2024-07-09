@@ -14,7 +14,7 @@ namespace Celikoor_Kelompok19
     public partial class FormTambahFilm : Form
     {
         public List<Kelompok> listKelompok = new List<Kelompok>();
-        public List<Aktor> listAktor = new List<Aktor>();
+        public List<User> listAktor = new List<User>();
         public List<Genre> listGenre = new List<Genre>();
         public FormTambahFilm()
         {
@@ -47,7 +47,7 @@ namespace Celikoor_Kelompok19
                     DataGridViewRow row = dataGridViewDaftarAktor.Rows[i];
                     string id = row.Cells[0].Value.ToString();
                     string peran = row.Cells[2].Value.ToString();
-                    Aktor a = Aktor.AmbilData("id", id);
+                    User a = User.AmbilData("id", id);
                     f.TambahDataAktorFilm(f, a, peran);
                 }
 
@@ -79,7 +79,7 @@ namespace Celikoor_Kelompok19
         {
             listKelompok = Kelompok.BacaData("", "");
             listGenre = Genre.BacaData("", "");
-            listAktor = Aktor.BacaData("", "");
+            listAktor = User.BacaData("", "");
 
             comboBoxKelompok.DataSource = listKelompok;
             comboBoxKelompok.DisplayMember = "Nama";
@@ -163,7 +163,7 @@ namespace Celikoor_Kelompok19
 
         private void buttonTambahAktor_Click(object sender, EventArgs e)
         {
-            Aktor a = Aktor.AmbilData("nama", comboBoxAktor.Text);
+            User a = User.AmbilData("nama", comboBoxAktor.Text);
             dataGridViewDaftarAktor.Rows.Add(a.Id, a.Nama, comboBoxPeranAktor.Text);
 
             comboBoxAktor.SelectedIndex = 0;

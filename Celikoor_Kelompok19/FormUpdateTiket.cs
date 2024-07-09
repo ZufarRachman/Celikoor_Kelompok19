@@ -58,9 +58,9 @@ namespace Celikoor_Kelompok19
                 {
                     statusHadir = "0";
                 }
-                Ticket t = new Ticket(statusHadir, operatorNama, double.Parse(textBoxHarga.Text), lblNomorKursi.Text, i);
+                Comment t = new Comment(statusHadir, operatorNama, double.Parse(textBoxHarga.Text), lblNomorKursi.Text, i);
 
-                Ticket.UbahData(t);
+                Comment.UbahData(t);
                 MessageBox.Show("Data berhasil diubah.", "Info");
                 buttonKeluar_Click(this, e);
             }

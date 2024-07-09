@@ -47,25 +47,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Aktor.cs" />
-    <Compile Include="AktorFilm.cs" />
+    <Compile Include="Friend.cs" />
+    <Compile Include="Hashtag.cs" />
+    <Compile Include="Like.cs" />
+    <Compile Include="Tagging.cs" />
+    <Compile Include="User.cs" />
     <Compile Include="Cinema.cs" />
-    <Compile Include="Film.cs" />
-    <Compile Include="FilmStudio.cs" />
-    <Compile Include="Genre.cs" />
-    <Compile Include="GenreFilm.cs" />
-    <Compile Include="Invoice.cs" />
-    <Compile Include="JadwalFilm.cs" />
-    <Compile Include="JenisStudio.cs" />
-    <Compile Include="Kelompok.cs" />
     <Compile Include="Koneksi.cs" />
-    <Compile Include="Konsumen.cs" />
-    <Compile Include="Laporan.cs" />
-    <Compile Include="Pegawai.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SesiFilm.cs" />
-    <Compile Include="Studio.cs" />
-    <Compile Include="Ticket.cs" />
+    <Compile Include="Picture.cs" />
+    <Compile Include="Comment.cs" />
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="Microsoft.Office.Core">

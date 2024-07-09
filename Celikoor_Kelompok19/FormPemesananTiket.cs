@@ -15,7 +15,7 @@ namespace Celikoor_Kelompok19
     {
         public List<Film> listFilm = new List<Film>();
         public List<Cinema> listCinema = new List<Cinema>();
-        public List<Studio> listStudio = new List<Studio>();
+        public List<Picture> listStudio = new List<Picture>();
         public List<AktorFilm> listAktorFilm = new List<AktorFilm>();
         public List<GenreFilm> listGenreFilm = new List<GenreFilm>();
         public List<SesiFilm> listSesiFilm = new List<SesiFilm>();
@@ -186,7 +186,7 @@ namespace Celikoor_Kelompok19
         }
         public void ProcessSelectedSeats(string isiTgl, string isiJudul, string isiCinema, string isiStudio)
         {
-            List<string> listKursiTerpilih = Ticket.GetKursi(isiTgl, isiJudul, isiCinema, isiStudio);
+            List<string> listKursiTerpilih = Comment.GetKursi(isiTgl, isiJudul, isiCinema, isiStudio);
             string kursiListAsString = string.Join(",", listKursiTerpilih);
             kursiListAsString = kursiListAsString.Replace(" ", "");
 
@@ -260,7 +260,7 @@ namespace Celikoor_Kelompok19
             if (comboBoxStudio.SelectedItem != null)
             {
                 Film f = (Film)comboBoxJudul.SelectedItem;
-                Studio s = (Studio)comboBoxStudio.SelectedItem;
+                Picture s = (Picture)comboBoxStudio.SelectedItem;
                 lblStudio.Text = s.JenisStudio.Nama.ToString();
                 lblTotalKursi.Text = s.Kapasitas.ToString() + " Kursi";
                 DateTime tanggalPesan = dateTimePickerTanggalPesan.Value;
@@ -378,7 +378,7 @@ namespace Celikoor_Kelompok19
             if (konsumen.Saldo >= totalBayar)
             {
                 Film f = (Film)comboBoxJudul.SelectedItem;
-                Studio s = (Studio)comboBoxStudio.SelectedItem;
+                Picture s = (Picture)comboBoxStudio.SelectedItem;
                 JadwalFilm jf = (JadwalFilm)comboBoxJamPemutaran.SelectedItem;
 
                 SesiFilm sf = SesiFilm.AmbilData(jf, s, f);

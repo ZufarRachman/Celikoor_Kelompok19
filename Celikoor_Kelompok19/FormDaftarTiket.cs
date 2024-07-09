@@ -14,7 +14,7 @@ namespace Celikoor_Kelompok19
     public partial class FormDaftarTiket : Form
     {
         public Pegawai operatorNama;
-        public List<Ticket> listTicket = new List<Ticket>();
+        public List<Comment> listTicket = new List<Comment>();
         public FormDaftarTiket()
         {
             InitializeComponent();
@@ -24,7 +24,7 @@ namespace Celikoor_Kelompok19
         {
             FormatDataGrid();
 
-            listTicket = Ticket.BacaData("", "");
+            listTicket = Comment.BacaData("", "");
 
             TampilDataGrid();
 
@@ -46,28 +46,28 @@ namespace Celikoor_Kelompok19
             switch (cmbKriteria.Text)
             {
                 case "InvoiceID":
-                    listTicket = Ticket.BacaData("t.invoices_id", txtNilaiKriteria.Text);
+                    listTicket = Comment.BacaData("t.invoices_id", txtNilaiKriteria.Text);
                     break;
                 case "Nomor Kursi":
-                    listTicket = Ticket.BacaData("t.nomor_kursi", txtNilaiKriteria.Text);
+                    listTicket = Comment.BacaData("t.nomor_kursi", txtNilaiKriteria.Text);
                     break;                        
                 case "Status Hadir":              
-                    listTicket = Ticket.BacaData("t.status_hadir", txtNilaiKriteria.Text);
+                    listTicket = Comment.BacaData("t.status_hadir", txtNilaiKriteria.Text);
                     break;                        
                 case "Operator":                  
-                    listTicket = Ticket.BacaData("t.operator_id", txtNilaiKriteria.Text);
+                    listTicket = Comment.BacaData("t.operator_id", txtNilaiKriteria.Text);
                     break;                        
                 case "Harga":                     
-                    listTicket = Ticket.BacaData("t.harga", txtNilaiKriteria.Text);
+                    listTicket = Comment.BacaData("t.harga", txtNilaiKriteria.Text);
                     break;                        
                 case "Jadwal Film":               
-                    listTicket = Ticket.BacaData("t.jadwal_film_id", txtNilaiKriteria.Text);
+                    listTicket = Comment.BacaData("t.jadwal_film_id", txtNilaiKriteria.Text);
                     break;                        
                 case "Studio":                    
-                    listTicket = Ticket.BacaData("t.studios_id", txtNilaiKriteria.Text);
+                    listTicket = Comment.BacaData("t.studios_id", txtNilaiKriteria.Text);
                     break;                        
                 case "Film":                      
-                    listTicket = Ticket.BacaData("t.films_id", txtNilaiKriteria.Text);
+                    listTicket = Comment.BacaData("t.films_id", txtNilaiKriteria.Text);
                     break;
             }
 
@@ -81,7 +81,7 @@ namespace Celikoor_Kelompok19
                 string pID = dataGridViewDaftarTiket.CurrentRow.Cells["InvoiceID"].Value.ToString();
                 string pNomorKursi = dataGridViewDaftarTiket.CurrentRow.Cells["NomorKursi"].Value.ToString();
 
-                Ticket t = Ticket.AmbilData(pID, pNomorKursi);
+                Comment t = Comment.AmbilData(pID, pNomorKursi);
                 if (t != null)
                 {
                     FormUpdateTiket frm = new FormUpdateTiket();
@@ -116,8 +116,8 @@ namespace Celikoor_Kelompok19
                 DialogResult hasil = MessageBox.Show(this, "Apakah anda yakin ingin menghapus " + invoiceIDHapus + "-" + nomorKursiHapus + "?", "HAPUS", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (hasil == DialogResult.Yes)
                 {
-                    Ticket t = new Ticket(i, nomorKursiHapus);
-                    Boolean hapus = Ticket.HapusData(t);
+                    Comment t = new Comment(i, nomorKursiHapus);
+                    Boolean hapus = Comment.HapusData(t);
                     if (hapus == true)
                     {
                         MessageBox.Show("Penghapusan data berhasil");
@@ -178,7 +178,7 @@ namespace Celikoor_Kelompok19
             dataGridViewDaftarTiket.Rows.Clear();
             if (listTicket.Count > 0)
             {
-                foreach (Ticket t in listTicket)
+                foreach (Comment t in listTicket)
                 {
                     dataGridViewDaftarTiket.Rows.Add(t.InvoiceId.Id, t.NomorKursi, t.StatusHadir, t.OperatorId.Nama, t.Harga,t.JadwalFilmId.TanggalPemutaran.ToString("dd/MM/yyyy") + " - " + t.JadwalFilmId.JamPemutaran, t.StudioId.Nama, t.FilmId.Judul);
                 }
