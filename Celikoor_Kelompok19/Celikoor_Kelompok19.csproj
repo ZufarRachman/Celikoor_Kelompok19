@@ -1,0 +1,453 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{71976F17-8560-4B4C-A51B-16BC97548A17}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Celikoor_Kelompok19</RootNamespace>
+    <AssemblyName>Celikoor_Kelompok19</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="db.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>db.settings</DependentUpon>
+    </Compile>
+    <Compile Include="FormDaftarAktors.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDaftarAktors.Designer.cs">
+      <DependentUpon>FormDaftarAktors.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDaftarCinema.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDaftarCinema.Designer.cs">
+      <DependentUpon>FormDaftarCinema.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDaftarFilm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDaftarFilm.Designer.cs">
+      <DependentUpon>FormDaftarFilm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDaftarGenre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDaftarGenre.Designer.cs">
+      <DependentUpon>FormDaftarGenre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDaftarInvoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDaftarInvoice.Designer.cs">
+      <DependentUpon>FormDaftarInvoice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDaftarJadwalFilm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDaftarJadwalFilm.Designer.cs">
+      <DependentUpon>FormDaftarJadwalFilm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDaftarJenisStudio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDaftarJenisStudio.Designer.cs">
+      <DependentUpon>FormDaftarJenisStudio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDaftarKelompok.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDaftarKelompok.Designer.cs">
+      <DependentUpon>FormDaftarKelompok.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDaftarKonsumen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDaftarKonsumen.Designer.cs">
+      <DependentUpon>FormDaftarKonsumen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDaftarPegawai.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDaftarPegawai.Designer.cs">
+      <DependentUpon>FormDaftarPegawai.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDaftarStudio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDaftarStudio.Designer.cs">
+      <DependentUpon>FormDaftarStudio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDaftarTiket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDaftarTiket.Designer.cs">
+      <DependentUpon>FormDaftarTiket.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormHalamanProfileKonsumen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormHalamanProfileKonsumen.Designer.cs">
+      <DependentUpon>FormHalamanProfileKonsumen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormLaporan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLaporan.Designer.cs">
+      <DependentUpon>FormLaporan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPemesananTiket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPemesananTiket.Designer.cs">
+      <DependentUpon>FormPemesananTiket.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPenjadwalanFilm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPenjadwalanFilm.Designer.cs">
+      <DependentUpon>FormPenjadwalanFilm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRegister.Designer.cs">
+      <DependentUpon>FormRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTambahAktors.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTambahAktors.Designer.cs">
+      <DependentUpon>FormTambahAktors.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTambahCinema.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTambahCinema.Designer.cs">
+      <DependentUpon>FormTambahCinema.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTambahFilm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTambahFilm.Designer.cs">
+      <DependentUpon>FormTambahFilm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTambahGenre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTambahGenre.Designer.cs">
+      <DependentUpon>FormTambahGenre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTambahInvoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTambahInvoice.Designer.cs">
+      <DependentUpon>FormTambahInvoice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTambahJadwalFilm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTambahJadwalFilm.Designer.cs">
+      <DependentUpon>FormTambahJadwalFilm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTambahJenisStudio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTambahJenisStudio.Designer.cs">
+      <DependentUpon>FormTambahJenisStudio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTambahKelompok.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTambahKelompok.Designer.cs">
+      <DependentUpon>FormTambahKelompok.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTambahKonsumen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTambahKonsumen.Designer.cs">
+      <DependentUpon>FormTambahKonsumen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTambahPegawai.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTambahPegawai.Designer.cs">
+      <DependentUpon>FormTambahPegawai.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTambahStudio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTambahStudio.Designer.cs">
+      <DependentUpon>FormTambahStudio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormUpdateAktor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUpdateAktor.Designer.cs">
+      <DependentUpon>FormUpdateAktor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormUpdateFilm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUpdateFilm.Designer.cs">
+      <DependentUpon>FormUpdateFilm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormUpdateInvoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUpdateInvoice.Designer.cs">
+      <DependentUpon>FormUpdateInvoice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormUpdateJadwalFilm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUpdateJadwalFilm.Designer.cs">
+      <DependentUpon>FormUpdateJadwalFilm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormUpdateKonsumen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUpdateKonsumen.Designer.cs">
+      <DependentUpon>FormUpdateKonsumen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormUpdateStudio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUpdateStudio.Designer.cs">
+      <DependentUpon>FormUpdateStudio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormUpdateTiket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUpdateTiket.Designer.cs">
+      <DependentUpon>FormUpdateTiket.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormDaftarAktors.resx">
+      <DependentUpon>FormDaftarAktors.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDaftarCinema.resx">
+      <DependentUpon>FormDaftarCinema.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDaftarFilm.resx">
+      <DependentUpon>FormDaftarFilm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDaftarGenre.resx">
+      <DependentUpon>FormDaftarGenre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDaftarInvoice.resx">
+      <DependentUpon>FormDaftarInvoice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDaftarJadwalFilm.resx">
+      <DependentUpon>FormDaftarJadwalFilm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDaftarJenisStudio.resx">
+      <DependentUpon>FormDaftarJenisStudio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDaftarKelompok.resx">
+      <DependentUpon>FormDaftarKelompok.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDaftarKonsumen.resx">
+      <DependentUpon>FormDaftarKonsumen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDaftarPegawai.resx">
+      <DependentUpon>FormDaftarPegawai.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDaftarStudio.resx">
+      <DependentUpon>FormDaftarStudio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDaftarTiket.resx">
+      <DependentUpon>FormDaftarTiket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormHalamanProfileKonsumen.resx">
+      <DependentUpon>FormHalamanProfileKonsumen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLaporan.resx">
+      <DependentUpon>FormLaporan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPemesananTiket.resx">
+      <DependentUpon>FormPemesananTiket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPenjadwalanFilm.resx">
+      <DependentUpon>FormPenjadwalanFilm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRegister.resx">
+      <DependentUpon>FormRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTambahAktors.resx">
+      <DependentUpon>FormTambahAktors.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTambahCinema.resx">
+      <DependentUpon>FormTambahCinema.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTambahFilm.resx">
+      <DependentUpon>FormTambahFilm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTambahGenre.resx">
+      <DependentUpon>FormTambahGenre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTambahInvoice.resx">
+      <DependentUpon>FormTambahInvoice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTambahJadwalFilm.resx">
+      <DependentUpon>FormTambahJadwalFilm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTambahJenisStudio.resx">
+      <DependentUpon>FormTambahJenisStudio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTambahKelompok.resx">
+      <DependentUpon>FormTambahKelompok.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTambahKonsumen.resx">
+      <DependentUpon>FormTambahKonsumen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTambahPegawai.resx">
+      <DependentUpon>FormTambahPegawai.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTambahStudio.resx">
+      <DependentUpon>FormTambahStudio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUpdateAktor.resx">
+      <DependentUpon>FormUpdateAktor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUpdateFilm.resx">
+      <DependentUpon>FormUpdateFilm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUpdateInvoice.resx">
+      <DependentUpon>FormUpdateInvoice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUpdateJadwalFilm.resx">
+      <DependentUpon>FormUpdateJadwalFilm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUpdateKonsumen.resx">
+      <DependentUpon>FormUpdateKonsumen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUpdateStudio.resx">
+      <DependentUpon>FormUpdateStudio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUpdateTiket.resx">
+      <DependentUpon>FormUpdateTiket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="db.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>db.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Celikoor_LIB\Celikoor_LIB.csproj">
+      <Project>{606c3b54-bdcb-4f7b-9f46-c3aa25416e74}</Project>
+      <Name>Celikoor_LIB</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>9</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
